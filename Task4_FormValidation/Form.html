@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+    </head>
+    <body>
+        <script>
+            function data() {
+                var email = document.getElementById("n1").value;
+                var password = document.getElementById("n2").value;
+
+                if (email === "" || password === "") {
+                    alert("All fields are mandatory");
+                    return false;
+                } else if (password.length < 8) {
+                    alert("Password must be at least 8 characters long");
+                    return false;
+                } else if (emailpattern.test(email)) {
+                    alert("Please enter a valid email address");
+                    return false;
+                } else {
+                    alert("Form submitted successfully!");
+                    return true;
+                }
+            }
+        </script>
+        
+        <form onsubmit="return data()" action="frm.html" style="text-align: center;">
+            <b>Email Id:</b> <input type="email" id="n1" style="width: 250px; height: 25px;"><br><br>
+            <b>Password:</b> <input type="password" id="n2" style="width: 250px; height: 25px;"><br><br>
+            <input type="submit" style="width: 250px; height: 25px;" value="Submit">
+        </form>
+    </body>
+</html>
